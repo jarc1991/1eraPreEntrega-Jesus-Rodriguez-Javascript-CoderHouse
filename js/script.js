@@ -1,9 +1,10 @@
 // Inicio nombre de usuario y contraseña.
 
-let nombreUsuario = prompt ("Nombre de usuario a registrar") 
+let nombreUsuario = prompt ("Nombre de usuario a registrar") .toUpperCase()
 let contador = 0
+const bienvenida = "Bienvenido/a a Adele's Store "
 
-while (contador <= 3){
+while (contador <=3){
 
 if ((isNaN (nombreUsuario)) && nombreUsuario != " ") {
 
@@ -13,18 +14,18 @@ if ((isNaN (nombreUsuario)) && nombreUsuario != " ") {
 } else {
 
     alert ("Debe ingresar un usuario correcto. Ejemplo: Jesus") 
-    nombreUsuario = prompt ("Nombre de usuario a registrar")
+    const nombreUsuario = prompt ("Nombre de usuario a registrar")
     contador++
 }}
 
 let contrasenia = Number (prompt ("Ingrese una contraseña"))
 
-while (contador <= 3){
+while (contador <=3){
 
 if ((isNaN (contrasenia)) || contrasenia == " ") {
 
     alert ("Debe ingresar una contraseña númerica. Ejemplo: 1234")
-    contrasenia = Number (prompt ("Ingrese una contraseña"))
+    const contrasenia = Number (prompt ("Ingrese una contraseña"))
     contador++
     
 } else {
@@ -34,14 +35,14 @@ if ((isNaN (contrasenia)) || contrasenia == " ") {
   
 }}
 
-let usuarioIngresado = prompt ("Ingrese su usuario registrado") 
+let usuarioIngresado = prompt ("Ingrese su usuario registrado") .toUpperCase()
 let contraseniaIngresada = Number (prompt("Ingrese la contraseña registrada"))
 
 for (i = 0; i < 2; i++){
 
 if (usuarioIngresado === nombreUsuario && contraseniaIngresada === contrasenia && isNaN (usuarioIngresado) && usuarioIngresado != " ") {
 
-    alert ("Bienvenidos a Adele's Store" + " " + usuarioIngresado)
+    alert (bienvenida + " " + usuarioIngresado)
     break
 
 }
@@ -59,9 +60,11 @@ else {
     alert ("Intente nuevamente más tarde")
 } }
 
-let menu = "1- Saber un poco de Adele.\n2- Discos de Adele.\n3- Precios Discos. \n4- Compra. \n5- Salir."
+let menu = "1- Saber un poco de Adele.\n2- Discos de Adele.\n3- Precios Discos. \n4- Compra. \n5- Compra en cuotas.\n6- Salir."
 let opcion = 0
 let compra = 50
+
+// Función
 
 function precioDiscos () {
 
@@ -89,7 +92,79 @@ do {
 
         let selectDisc = prompt ("¿Cual cd quieres comprar, debes indicar 19 o 21 o 25 o 30? También pues introducir 0 para salir")
 
-        if (selectDisc == "19") {
+        switch (selectDisc) {
+
+            case "19": alert(precioDiscos())
+
+            break;
+
+            case "21" : alert(precioDiscos())
+
+            break;
+
+            case "25" : alert(precioDiscos())
+
+            break;
+
+            case "30" : alert(precioDiscos())
+
+            break;
+
+            case "21" : alert(precioDiscos())
+
+            break;
+
+            case "0" : 
+
+            break;
+
+            default:
+
+            alert ("Debes introducir una opción")
+
+            break;
+
+
+        }
+    
+    } 
+
+    else if (opcion === 4) {
+
+        let numDisc = Number (prompt("¿Cuántos discos desea comprar?"))
+
+        for (i = 0; i < numDisc; i++) {
+        
+        let compraDisc = Number (prompt ("Introduce el cd que desea comprar ejemplo: 19, 21, 25 o 30"))
+        
+        alert ("Tiene un valor de " + " $ " + compra)
+    
+    }
+
+    alert ("Tu total a pagar es : " + (numDisc * compra))
+
+    }
+
+    else if (opcion === 5) {
+
+        numDisc = Number (prompt("¿Cuántos discos desea comprar?"))
+
+        let cantCuotas = Number (prompt ("Diga en cuántas cuotas (sólo se permiten hasta 12). ADVERTENCIA: RECARGO DEL 25% anual"))
+        let interesCuota = Number (25/100)/12
+        
+        let calCuotas = ((((numDisc * compra) * interesCuota) * cantCuotas) + (numDisc * compra)) .toFixed(2)
+
+        alert ("Su total a pagar en: " + cantCuotas + " " + "cuotas es de: " + calCuotas)
+
+    }
+}
+
+while (opcion != 6) 
+
+
+
+
+    /*if (selectDisc == "19") {
 
             precioDiscos ()
         }
@@ -116,24 +191,4 @@ do {
         
         else {
         
-            alert ("Debes introducir una opción.")
-        } }
-
-    else if (opcion === 4) {
-
-        let numDisc = Number (prompt("¿Cuántos discos desea comprar?"))
-
-        for (i = 0; i < numDisc; i++) {
-        
-        let compraDisc = Number (prompt ("Introduce el cd que desea comprar ejemplo: 19, 21, 25 o 30"))
-        
-        alert ("Tiene un valor de " + " $ " + compra)
-    
-    }
-
-    alert ("Tu total a pagar es : " + (numDisc * compra))
-
-    }
-}
-
-while (opcion != 5) 
+            alert ("Debes introducir una opción.")*/
