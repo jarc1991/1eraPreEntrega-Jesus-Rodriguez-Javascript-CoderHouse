@@ -94,36 +94,31 @@ do {
 
         switch (selectDisc) {
 
-            case "19": alert(precioDiscos())
+            case "19": precioDiscos()
 
-            break;
+            break
 
-            case "21" : alert(precioDiscos())
+            case "21" : precioDiscos()
 
-            break;
+            break
 
-            case "25" : alert(precioDiscos())
+            case "25" : precioDiscos()
 
-            break;
+            break
 
-            case "30" : alert(precioDiscos())
+            case "30" : precioDiscos()
 
-            break;
-
-            case "21" : alert(precioDiscos())
-
-            break;
+            break
 
             case "0" : 
 
-            break;
+            break
 
             default:
 
             alert ("Debes introducir una opción")
 
-            break;
-
+            break
 
         }
     
@@ -163,6 +158,11 @@ while (opcion != 6)
 
 
 
+
+
+
+
+//Otra forma para hacer la opción 3 del menú
 
     /*if (selectDisc == "19") {
 
