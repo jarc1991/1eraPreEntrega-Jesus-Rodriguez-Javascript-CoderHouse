@@ -14,7 +14,7 @@ if ((isNaN (nombreUsuario)) && nombreUsuario != " ") {
 } else {
 
     alert ("Debe ingresar un usuario correcto. Ejemplo: Jesus") 
-    const nombreUsuario = prompt ("Nombre de usuario a registrar")
+    nombreUsuario = prompt ("Nombre de usuario a registrar")
     contador++
 }}
 
@@ -25,7 +25,7 @@ while (contador <=3){
 if ((isNaN (contrasenia)) || contrasenia == " ") {
 
     alert ("Debe ingresar una contraseña númerica. Ejemplo: 1234")
-    const contrasenia = Number (prompt ("Ingrese una contraseña"))
+    contrasenia = Number (prompt ("Ingrese una contraseña"))
     contador++
     
 } else {
